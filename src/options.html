@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GoogleMeetIntegration</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="hd-container">
+        <svg
+          width="84"
+          height="60"
+          viewBox="0 0 123 99"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M110.18 6.26L121.08 10.98C123.05 11.87 123.9 12.05 121.01 12.92L111.45 15.79C111 18.15 110.42 20.68 110.44 23.5C110.46 25.75 110.81 27.94 111.33 30.11C112.62 53.34 100.21 66.52 76.7 71.54C76.75 71.68 76.79 71.83 76.81 71.98L78.75 83.5H86.94C88.35 83.5 89.5 84.65 89.5 86.06C89.5 87.47 88.35 88.62 86.94 88.62H70.02C68.61 88.62 67.46 87.47 67.46 86.06C67.46 84.65 68.61 83.5 70.02 83.5H73.57L71.77 72.82C71.72 72.51 71.72 72.21 71.78 71.93C61.89 71.73 53.03 72.69 45.25 74.87C31.01 78.87 24.35 85.63 15.33 94.73C11.81 98.28 11.76 99.89 6.64 98.06C5.21 97.56 4.03 96.86 3.09 96C0.99 94.08 0.07 91.34 0 88.03C10.98 82.34 20.77 75.07 29.35 66.19C39.16 65.72 52.11 65.28 60.56 60.56C70.25 55.15 75.76 45.94 83.35 35.64C84.24 33.8 84.42 32.82 84.05 32.51C82.51 31.24 77.11 37.82 76.14 38.96C69.89 46.39 63.51 54.75 54.87 58.18C49.72 60.22 40.15 61.08 33.73 61.4C34.3 60.74 34.86 60.08 35.42 59.4C48.55 42.34 76.2 23.03 83.35 10.15C87.7 -3.44 104.38 -1.97 110.18 6.26ZM99.8 6.74C101.46 6.74 102.8 8.08 102.8 9.74C102.8 11.4 101.46 12.74 99.8 12.74C98.14 12.74 96.8 11.4 96.8 9.74C96.8 8.08 98.14 6.74 99.8 6.74Z"
+            fill="#E9E9E9"
+          />
+        </svg>
+        <h1 class="hd-title">GoogleMeet チャットSlack連携</h1>
+      </div>
+    </header>
+    <main>
+      <div class="auto-section container">
+        <h2 class="sub">Slack自動連携</h2>
+        <div class="toggle_switch">
+          <input type="checkbox" name="xxx" id="cb_toggle_switch" />
+          <label for="cb_toggle_switch"></label>
+        </div>
+      </div>
+      <div class="channel-section container">
+        <h3>Slackチャンネル設定</h3>
+        <p>チャンネルを選択する</p>
+        <div class="select container">
+          <select name="slack-channel" class="filter-channel">
+            <option value="sample1">sample1</option>
+            <option value="sample2">sample2</option>
+            <option value="sample3">sample3</option>
+          </select>
+        </div>
+        <p>アクセストークンを追加する</p>
+        <form class="container" action="">
+          <input type="text" class="token-input" />
+          <button class="token-btn" type="submit">登録</button>
+        </form>
+      </div>
+      <p>ユーザーネームを追加する</p>
+      <form class="container" action="">
+        <input type="text" class="username-input" />
+        <button class="userneme-btn" type="submit">登録</button>
+      </form>
+    </div>
+      <div class="channel container">
+        <table class="channel-list">
+          <tr>
+            <th>登録済みSlackチャンネル</th>
+          </tr>
+          <tr>
+            <td>thtps://xxxxx.com</td>
+            <td class="td2">
+              <button class="tr-btn">連携</button>
+          </td> 
+          </tr>
+          <tr>
+            <td>thtps://xxxxx.com</td>
+            <td class="td2">
+              <button class="tr-btn2">解除</button>
+          </td>
+          </tr>
+          <tr>
+            <td>thtps://xxxxx.com</td>
+            <td class="td2">
+              <button class="tr-btn3">解除</button>
+          </td>
+          </tr>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>

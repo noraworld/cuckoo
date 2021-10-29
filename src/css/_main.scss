@@ -1,0 +1,211 @@
+body {
+  font-family: fot-tsukuardgothic-std, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #e9ecfc;
+}
+
+header {
+  background-color: #232829;
+  padding: 16px 20px;
+  min-height: 4vh;
+  width: 100%;
+  .hd-container {
+    display: flex;
+    align-items: center;
+    img {
+      color: rgb(232, 234, 237);
+    }
+  }
+  .hd-title {
+    font-size: 18px;
+    color: rgb(232, 234, 237);
+  }
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 1rem;
+  h2,
+  h3 {
+    font-size: 20px;
+    margin-bottom: 2rem;
+  }
+  p {
+    font-size: 14px;
+    color: 232829;
+  }
+
+}
+
+.container {
+  margin: 0.5rem 0rem;
+}
+
+.toggle_switch {
+  display: table;
+  font-size: 60px;
+}
+
+.toggle_switch > input {
+  display: none;
+}
+
+.toggle_switch > label {
+  display: block;
+  position: relative;
+  width: 1.8em;
+  height: 0.8em;
+  border-radius: 4px;
+  background-color: #2b2a2f;
+  cursor: pointer;
+}
+.toggle_switch > input:checked + label {
+  background-color: #2d91bc;
+}
+.toggle_switch > label::before {
+  position: absolute;
+  top: 0.05em;
+  left: 0.05em;
+  width: calc(0.8em - 0.1em);
+  height: calc(0.8em - 0.1em);
+  border-radius: calc(4px - 0.4px);
+  background-color: #fff;
+  transition: 0.5s;
+  content: "";
+}
+.toggle_switch > input:checked + label::before {
+  left: calc(100% - 0.8em + 0.05em);
+}
+
+select {
+  -weblit-appearence: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+.select {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0px 4px 4px 0px;
+}
+select {
+  color: #2d91bc;
+  width: 36rem;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 4px 4px 4px 4px;
+  appearance: button;
+}
+
+
+.select:hover::after {
+  background: white;
+  color: #2d91bc;
+}
+
+form input,
+form button {
+  padding: 0.8rem;
+  font-size: 14px;
+  border: none;
+  background: white;
+}
+form input {
+  border-radius: 4px 0px 0px 4px;
+  width: 30rem;
+}
+form button {
+  border-radius: 0px 4px 4px 0px;
+}
+form button {
+  color: #2d91bc;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form button:hover {
+  background: #2d91bc;
+  color: white;
+}
+
+.channel-list {
+ width: 36rem;
+ text-align: start;
+ border-collapse: colla pse;
+ border-spacing: 0;
+ th {
+
+  //border-bottom: solid 0.1px #2d91bc;
+  padding: 10px;
+  border-radius: 4px 4px 4px 4px;
+  color: #2b2a2f;
+  text-align: start;
+  display: flex;
+  justify-content: space-between;
+ }
+ td {
+  padding: 10px;
+  border-bottom: solid 0.1px rgb(247, 247, 247);
+  } 
+}
+
+
+
+.tr-btn{
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background: #2d91bc;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.tr-btn2, .tr-btn3{
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background: #C4C4C4;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+
+.tr-btn::hover{
+  color: #9addfa;
+  background: #fff;
+}
+.td2{
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+  form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 450px) {
+  form input,
+  form button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    background: white;
+  }
+  select {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  .select::after {
+    padding: 0.5rem;
+  }
+}
