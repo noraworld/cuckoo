@@ -32,11 +32,6 @@
       prevMessage = null;
 
       getOptions();
-
-      console.log(
-        `Storage key "${key}" changed.`,
-        `Old value was "${oldValue}", new value is "${newValue}".`
-      );
     }
   });
 
