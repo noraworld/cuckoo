@@ -8,17 +8,37 @@
   let slackMention
   let slackUserId
 
-  chrome.storage.sync.get({
-    slackChannel: null,
-    slackBotToken: null,
-    slackMention: false,
-    slackUserId: null
-  }, (storage) => {
-    slackChannel = storage.slackChannel
-    slackBotToken = storage.slackBotToken
-    slackMention = storage.slackMention
-    slackUserId = storage.slackUserId
-  })
+  function getOptions() {
+    chrome.storage.sync.get({
+      slackChannel: null,
+      slackBotToken: null,
+      slackMention: false,
+      slackUserId: null
+    }, (storage) => {
+      slackChannel = storage.slackChannel
+      slackBotToken = storage.slackBotToken
+      slackMention = storage.slackMention
+      slackUserId = storage.slackUserId
+    })
+  }
+
+  // _namespace is "sync", but is not used for now
+  chrome.storage.onChanged.addListener(function (changes, _namespace) {
+    for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
+      // because a Slack channel is subject to change
+      // a channel and a thread ID need to be corresponded
+      threadId = null;
+
+      prevMessage = null;
+
+      getOptions();
+
+      console.log(
+        `Storage key "${key}" changed.`,
+        `Old value was "${oldValue}", new value is "${newValue}".`
+      );
+    }
+  });
 
   var observer = new MutationObserver((records) => {
     records.forEach((record) => {
@@ -103,6 +123,8 @@
   }
 
   function prepare() {
+    getOptions()
+
     let chatElement = document.querySelectorAll('.z38b6')[0]
     let chatElementTimeoutID
 
