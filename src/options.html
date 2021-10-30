@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
       rel="stylesheet"
     />
+    <script type="text/javascript" src="js/options.js"></script>
   </head>
   <body>
     <header>
@@ -42,16 +43,13 @@
       </div>
       <div class="channel-section container">
         <h3>Slackチャンネル設定</h3>
-        <p>チャンネルを選択する</p>
-        <div class="select container">
-          <select name="slack-channel" class="filter-channel">
-            <option value="sample1">sample1</option>
-            <option value="sample2">sample2</option>
-            <option value="sample3">sample3</option>
-          </select>
-        </div>
+        <p>チャンネルを追加する</p>
+        <form id="slack-channel" class="container" action="">
+          <input type="text" class="channel-input" />
+          <button class="channel-btn" type="submit">登録</button>
+        </form>
         <p>アクセストークンを追加する</p>
-        <form class="container" action="">
+        <form id="slack-bot-token" class="container" action="">
           <input type="text" class="token-input" />
           <button class="token-btn" type="submit">登録</button>
         </form>
