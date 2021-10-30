@@ -15,8 +15,24 @@
     "message": "Slack bot token"
   },
 
+  "slack_bot_token_link": {
+    "message": "https://slack.com/help/articles/115005265703-Create-a-bot-for-your-workspace"
+  },
+
+  "slack_bot_token_description": {
+    "message": "How to create a Slack bot, and generate a Slack bot token"
+  },
+
+  "slack_bot_token_scopes_description": {
+    "message": "\"chat:write\" is required for this bot token"
+  },
+
   "slack_channel": {
     "message": "Slack channel"
+  },
+
+  "slack_channel_description": {
+    "message": "The head \"#\" is not necessary"
   },
 
   "slack_mention": {
@@ -25,6 +41,14 @@
 
   "slack_user_id": {
     "message": "Slack user ID"
+  },
+
+  "slack_user_id_link": {
+    "message": "https://www.workast.com/help/articles/61000165203/"
+  },
+
+  "slack_user_id_description": {
+    "message": "How to find a Slack user ID"
   },
 
   "save_button": {
