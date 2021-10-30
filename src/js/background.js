@@ -74,6 +74,14 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   }
 })
 
+chrome.runtime.onInstalled.addListener((object) => {
+  if (object.reason === chrome.runtime.OnInstalledReason.INSTALL) {
+    chrome.tabs.create({
+      url: chrome.extension.getURL('options.html')
+    });
+  }
+});
+
 function getCurrentTime() {
   let today    = new Date()
   let date     = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
