@@ -11,12 +11,12 @@
     "message": "Transmit Google Meet’s chats to Slack channel automatically, like a cuckoo clock"
   },
 
-  "slack_channel": {
-    "message": "Slack channel"
-  },
-
   "slack_bot_token": {
     "message": "Slack bot token"
+  },
+
+  "slack_channel": {
+    "message": "Slack channel"
   },
 
   "save_button": {
