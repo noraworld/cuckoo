@@ -19,6 +19,14 @@
     "message": "Slack channel"
   },
 
+  "slack_mention": {
+    "message": "Get notified"
+  },
+
+  "slack_user_id": {
+    "message": "Slack user ID"
+  },
+
   "save_button": {
     "message": "Save"
   }

@@ -383,3 +383,9 @@ form button:hover {
   }
 }
 /*# sourceMappingURL=style.css.map */
+
+/* below is written directly */
+
+.invisible {
+  display: none;
+}

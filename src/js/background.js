@@ -30,7 +30,13 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
     if (msg.payload['thread_ts'] === null) {
       const foo = (async() => {
         originalText = msg.payload['text']
-        msg.payload['text'] = 'Chat log from Google Meet (' + getCurrentTime() + ')'
+
+        if (msg.userId) {
+          msg.payload['text'] = '<' + msg.userId + '> Chat log from Google Meet (' + getCurrentTime() + ')'
+        }
+        else {
+          msg.payload['text'] = 'Chat log from Google Meet (' + getCurrentTime() + ')'
+        }
 
         // Why can’t postRequest wait????????????????
         fetch(msg.endpoint, {

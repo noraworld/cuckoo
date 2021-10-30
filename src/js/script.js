@@ -5,13 +5,19 @@
   var prevMessage = null
   let slackChannel
   let slackBotToken
+  let slackMention
+  let slackUserId
 
   chrome.storage.sync.get({
     slackChannel: null,
-    slackBotToken: null
+    slackBotToken: null,
+    slackMention: false,
+    slackUserId: null
   }, (storage) => {
     slackChannel = storage.slackChannel
     slackBotToken = storage.slackBotToken
+    slackMention = storage.slackMention
+    slackUserId = storage.slackUserId
   })
 
   var observer = new MutationObserver((records) => {
@@ -86,7 +92,8 @@
         contentScriptQuery: 'postMessage',
         headers: headers,
         payload: payload,
-        endpoint: 'https://slack.com/api/chat.postMessage'
+        endpoint: 'https://slack.com/api/chat.postMessage',
+        userId: slackUserId
       },
       function(response) {
         threadId ||= response.ts
