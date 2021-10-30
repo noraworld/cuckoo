@@ -93,6 +93,7 @@
         headers: headers,
         payload: payload,
         endpoint: 'https://slack.com/api/chat.postMessage',
+        mention: slackMention,
         userId: slackUserId
       },
       function(response) {

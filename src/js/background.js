@@ -31,7 +31,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
       const foo = (async() => {
         originalText = msg.payload['text']
 
-        if (msg.userId) {
+        if (msg.mention && msg.userId) {
           msg.payload['text'] = '<' + msg.userId + '> Chat log from Google Meet (' + getCurrentTime() + ')'
         }
         else {
