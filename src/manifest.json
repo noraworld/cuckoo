@@ -1,10 +1,11 @@
 {
-  "name": "Cuckoo",
-  "short_name": "cuckoo",
+  "name": "__MSG_extension_name__",
+  "short_name": "__MSG_extension_short_name__",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "Transmit Google Meet’s chats to Slack channel automatically, like a cuckoo clock",
+  "description": "__MSG_extension_description__",
   "homepage_url": "https://github.com/noraworld/cuckoo",
+  "default_locale": "en",
 
   "permissions": [
     "tabs",

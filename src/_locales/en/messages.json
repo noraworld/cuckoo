@@ -1,0 +1,25 @@
+{
+  "extension_name": {
+    "message": "Cuckoo"
+  },
+
+  "extension_short_name": {
+    "message": "cuckoo"
+  },
+
+  "extension_description": {
+    "message": "Transmit Google Meet’s chats to Slack channel automatically, like a cuckoo clock"
+  },
+
+  "slack_channel": {
+    "message": "Slack channel"
+  },
+
+  "slack_bot_token": {
+    "message": "Slack bot token"
+  },
+
+  "save_button": {
+    "message": "Save"
+  }
+}

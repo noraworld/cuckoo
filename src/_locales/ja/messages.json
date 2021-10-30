@@ -1,0 +1,25 @@
+{
+  "extension_name": {
+    "message": "Cuckoo"
+  },
+
+  "extension_short_name": {
+    "message": "cuckoo"
+  },
+
+  "extension_description": {
+    "message": "Google Meet のチャットメッセージを Slack チャンネルに自動的に共有します"
+  },
+
+  "slack_channel": {
+    "message": "Slack チャンネル"
+  },
+
+  "slack_bot_token": {
+    "message": "Slack bot トークン"
+  },
+
+  "save_button": {
+    "message": "保存"
+  }
+}
