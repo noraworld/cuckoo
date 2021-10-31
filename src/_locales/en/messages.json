@@ -55,6 +55,10 @@
     "message": "How to find a Slack user ID"
   },
 
+  "google_meet_url_included": {
+    "message": "Include Google Meet URL"
+  },
+
   "save_button": {
     "message": "Save"
   }

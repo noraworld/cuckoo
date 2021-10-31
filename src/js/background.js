@@ -91,6 +91,8 @@ chrome.runtime.onInstalled.addListener((object) => {
 
 function buildFirstSlackMessage(message) {
   let text
+  let fields
+
   message.payload['text'] = null
 
   if (message.mention && message.userId) {
@@ -100,6 +102,49 @@ function buildFirstSlackMessage(message) {
     text = 'Chat log from Google Meet'
   }
 
+  if (isGoogleMeetURL(message.googleMeetURL) && message.googleMeetURLIncluded) {
+    fields = [
+      {
+        'type': 'mrkdwn',
+        'text': '*URL*:'
+      },
+      {
+        'type': 'mrkdwn',
+        'text': '*Date and Time*:'
+      },
+      {
+        'type': 'mrkdwn',
+        'text': message.googleMeetURL
+      },
+      {
+        'type': 'plain_text',
+        'text': getCurrentTime(),
+        'emoji': false
+      }
+    ]
+  }
+  else {
+    fields = [
+      {
+        'type': 'mrkdwn',
+        'text': '*Date and Time*:'
+      },
+      {
+        'type': 'plain_text',
+        'text': ' ' // empty
+      },
+      {
+        'type': 'plain_text',
+        'text': getCurrentTime(),
+        'emoji': false
+      },
+      {
+        'type': 'plain_text',
+        'text': ' ' // empty
+      },
+    ]
+  }
+
   message.payload['blocks'] = [
     {
       'type': 'section',
@@ -107,25 +152,7 @@ function buildFirstSlackMessage(message) {
         'text': text,
         'type': 'mrkdwn',
       },
-      'fields': [
-        {
-          'type': 'mrkdwn',
-          'text': '*URL*:'
-        },
-        {
-          'type': 'mrkdwn',
-          'text': '*Date and Time*:'
-        },
-        {
-          'type': 'mrkdwn',
-          'text': isgoogleMeetURL(message.googleMeetURL) ? message.googleMeetURL : ' '
-        },
-        {
-          'type': 'plain_text',
-          'text': getCurrentTime(),
-          'emoji': false
-        }
-      ]
+      'fields': fields
     }
   ]
 
@@ -141,7 +168,7 @@ function getCurrentTime() {
   return datetime
 }
 
-function isgoogleMeetURL(url) {
+function isGoogleMeetURL(url) {
   if (!url) return false
 
   return (url.match(/^https:\/\/meet\.google\.com\//g)||[]).length !== 0

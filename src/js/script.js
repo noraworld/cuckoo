@@ -9,6 +9,7 @@
   let slackBotToken
   let slackMention
   let slackUserId
+  let googleMeetURLIncluded
 
   function getOptions() {
     chrome.storage.sync.get({
@@ -16,13 +17,15 @@
       slackChannel: null,
       slackBotToken: null,
       slackMention: false,
-      slackUserId: null
+      slackUserId: null,
+      googleMeetURLIncluded: false
     }, (storage) => {
       extensionPower = storage.extensionPower
       slackChannel = storage.slackChannel
       slackBotToken = storage.slackBotToken
       slackMention = storage.slackMention
       slackUserId = storage.slackUserId
+      googleMeetURLIncluded = storage.googleMeetURLIncluded
     })
   }
 
@@ -116,7 +119,8 @@
         endpoint: 'https://slack.com/api/chat.postMessage',
         mention: slackMention,
         userId: slackUserId,
-        googleMeetURL: googleMeetURL
+        googleMeetURL: googleMeetURL,
+        googleMeetURLIncluded: googleMeetURLIncluded
       },
       function(response) {
         threadId ||= response.ts
