@@ -3,6 +3,7 @@
 
   var threadId = null
   var prevMessage = null
+  let extensionPower
   let slackChannel
   let slackBotToken
   let slackMention
@@ -10,11 +11,13 @@
 
   function getOptions() {
     chrome.storage.sync.get({
+      extensionPower: false,
       slackChannel: null,
       slackBotToken: null,
       slackMention: false,
       slackUserId: null
     }, (storage) => {
+      extensionPower = storage.extensionPower
       slackChannel = storage.slackChannel
       slackBotToken = storage.slackBotToken
       slackMention = storage.slackMention
@@ -90,6 +93,8 @@
   })
 
   function post(message) {
+    if (extensionPower === false) return
+
     const headers = {
       'Content-Type': 'application/json; charset=utf-8',
       'Access-Control-Allow-Origin': '*',
