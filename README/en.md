@@ -1,5 +1,5 @@
 # Cuckoo
-![Google Meet to Slack](img/google_meet_to_slack.png)
+![Google Meet to Slack](/img/google_meet_to_slack.png)
 
 Cuckoo is a browser extension that allows you to post chat messages on Google Meet to a Slack channel.
 
@@ -30,4 +30,4 @@ That is done!
 Heading over to Google Meet, this extension starts to work automatically. All you have to do is open a chat box on Google Meet, send a message or wait someone sending it, and see if it is posted to Slack.
 
 ## Change log
-See [CHANGELOG.md](CHANGELOG.md).
+See [CHANGELOG.md](/CHANGELOG.md).
