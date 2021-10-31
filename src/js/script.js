@@ -3,6 +3,7 @@
 
   var threadId = null
   var prevMessage = null
+  var googleMeetURL = null
   let extensionPower
   let slackChannel
   let slackBotToken
@@ -114,7 +115,8 @@
         payload: payload,
         endpoint: 'https://slack.com/api/chat.postMessage',
         mention: slackMention,
-        userId: slackUserId
+        userId: slackUserId,
+        googleMeetURL: googleMeetURL
       },
       function(response) {
         threadId ||= response.ts
@@ -158,9 +160,21 @@
       if (chatElementTimeoutID) {
         clearTimeout(chatElementTimeoutID)
         observer.observe(chatElement, OBSERVE_CONFIG)
+        getGoogleMeetURL()
         ready()
       }
     }
+  }
+
+  function getGoogleMeetURL() {
+    chrome.runtime.sendMessage(
+      {
+        contentScriptQuery: 'getGoogleMeetURL',
+      },
+      function(url) {
+        googleMeetURL ||= url
+      }
+    );
   }
 
   function ready() {

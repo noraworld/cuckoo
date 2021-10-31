@@ -31,12 +31,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
       const foo = (async() => {
         originalText = msg.payload['text']
 
-        if (msg.mention && msg.userId) {
-          msg.payload['text'] = '<' + msg.userId + '> Chat log from Google Meet (' + getCurrentTime() + ')'
-        }
-        else {
-          msg.payload['text'] = 'Chat log from Google Meet (' + getCurrentTime() + ')'
-        }
+        msg = buildFirstSlackMessage(msg)
 
         // Why can’t postRequest wait????????????????
         fetch(msg.endpoint, {
@@ -50,6 +45,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
             sendResponse(response);
 
             if (response.ts) {
+              msg.payload['blocks'] = null
               msg.payload['text'] = originalText
               msg.payload['thread_ts'] = response.ts
               postRequest(msg.endpoint, msg.headers, JSON.stringify(msg.payload), sendResponse)
@@ -72,6 +68,17 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 
     return true
   }
+  else if (msg.contentScriptQuery === 'getGoogleMeetURL') {
+    // "chrome.tabs.query" cannot be used in content scripts
+    chrome.tabs.query({
+      active: true,
+      lastFocusedWindow: true
+    }, (tabs) => {
+      sendResponse(tabs[0].url);
+    });
+
+    return true;
+  }
 })
 
 chrome.runtime.onInstalled.addListener((object) => {
@@ -82,6 +89,49 @@ chrome.runtime.onInstalled.addListener((object) => {
   }
 });
 
+function buildFirstSlackMessage(message) {
+  let text
+  message.payload['text'] = null
+
+  if (message.mention && message.userId) {
+    text = '<' + message.userId + '> Chat log from Google Meet'
+  }
+  else {
+    text = 'Chat log from Google Meet'
+  }
+
+  message.payload['blocks'] = [
+    {
+      'type': 'section',
+      'text': {
+        'text': text,
+        'type': 'mrkdwn',
+      },
+      'fields': [
+        {
+          'type': 'mrkdwn',
+          'text': '*URL*:'
+        },
+        {
+          'type': 'mrkdwn',
+          'text': '*Date and Time*:'
+        },
+        {
+          'type': 'mrkdwn',
+          'text': isgoogleMeetURL(message.googleMeetURL) ? message.googleMeetURL : ' '
+        },
+        {
+          'type': 'plain_text',
+          'text': getCurrentTime(),
+          'emoji': false
+        }
+      ]
+    }
+  ]
+
+  return message
+}
+
 function getCurrentTime() {
   let today    = new Date()
   let date     = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
@@ -89,4 +139,10 @@ function getCurrentTime() {
   let datetime = date + ' ' + time
 
   return datetime
+}
+
+function isgoogleMeetURL(url) {
+  if (!url) return false
+
+  return (url.match(/^https:\/\/meet\.google\.com\//g)||[]).length !== 0
 }
