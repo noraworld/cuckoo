@@ -16,7 +16,7 @@
   "permissions": [
     "tabs",
     "storage",
-    "https://*/*"
+    "https://slack.com/*"
   ],
 
   "browser_action": {
