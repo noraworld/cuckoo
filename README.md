@@ -5,6 +5,14 @@ Cuckoo is a browser extension that allows you to post chat messages on Google Me
 
 This is the best way to log conversations because chat messages on Google Meet are deleted when its call ends.
 
+## features
+* You can select a Slack channel to which you want to post
+* You can get notified from Slack when a new chat message is sent
+    * This is useful when your active tab is not a meeting screen
+* You can share your meeting URL automatically through Slack
+    * You can also turn off this feature
+* You can apply settings instantly via a popup menu anytime, even during your meeting
+
 ## Installation (TBD)
 * Cuckoo - Chrome Web Store
 * Cuckoo - Firefox Add-ons
