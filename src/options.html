@@ -35,33 +35,43 @@
     </header>
     <main>
       <div class="channel-section container">
-        <p>__MSG_slack_bot_token__</p>
-        <form id="slack-bot-token" class="container" action="">
-          <input type="password" placeholder="xoxb-0000000000-0000000000000-xxxxxxxxxxxxxxxxxxxxxxxx" class="token-input" />
-          <button class="token-btn" type="submit">__MSG_save_button__</button>
-        </form>
-        <a href="__MSG_slack_bot_token_link__" target="_blank">__MSG_slack_bot_token_description__</a>
-        <span>__MSG_slack_bot_token_scopes_description__</span>
-        <p>__MSG_slack_channel__</p>
-        <form id="slack-channel" class="container" action="">
-          <input type="text" placeholder="general" class="channel-input" />
-          <button class="channel-btn" type="submit">__MSG_save_button__</button>
-        </form>
-        <span>__MSG_slack_channel_description__</span>
         <div class="auto-section container">
-          <p>__MSG_slack_mention__</p>
-          <div id="slack-mention" class="toggle_switch">
-            <input type="checkbox" name="xxx" id="cb_toggle_switch" />
-            <label for="cb_toggle_switch"></label>
+          <p>__MSG_extension_power__</p>
+          <div id="extension-power" class="toggle_switch">
+            <input type="checkbox" name="extension-power-input" id="extension-power-input" />
+            <label for="extension-power-input"></label>
           </div>
         </div>
-        <div id="slack-user-id" class="invisible">
-          <p>__MSG_slack_user_id__</p>
-          <form class="container" action="">
-            <input type="text" placeholder="@ULSWP58N6S or @noraworld" class="user-id-input" />
-            <button class="user-id-btn" type="submit">__MSG_save_button__</button>
+
+        <div id="all-options">
+          <p>__MSG_slack_bot_token__</p>
+          <form id="slack-bot-token" class="container" action="">
+            <input type="password" placeholder="xoxb-0000000000-0000000000000-xxxxxxxxxxxxxxxxxxxxxxxx" class="token-input" />
+            <button class="token-btn" type="submit">__MSG_save_button__</button>
           </form>
-          <a href="__MSG_slack_user_id_link__" target="_blank">__MSG_slack_user_id_description__</a>
+          <a href="__MSG_slack_bot_token_link__" target="_blank">__MSG_slack_bot_token_description__</a>
+          <span>__MSG_slack_bot_token_scopes_description__</span>
+          <p>__MSG_slack_channel__</p>
+          <form id="slack-channel" class="container" action="">
+            <input type="text" placeholder="general" class="channel-input" />
+            <button class="channel-btn" type="submit">__MSG_save_button__</button>
+          </form>
+          <span>__MSG_slack_channel_description__</span>
+          <div class="auto-section container">
+            <p>__MSG_slack_mention__</p>
+            <div id="slack-mention" class="toggle_switch">
+              <input type="checkbox" name="slack-mention-input" id="slack-mention-input" />
+              <label for="slack-mention-input"></label>
+            </div>
+          </div>
+          <div id="slack-user-id" class="invisible">
+            <p>__MSG_slack_user_id__</p>
+            <form class="container" action="">
+              <input type="text" placeholder="@ULSWP58N6S or @noraworld" class="user-id-input" />
+              <button class="user-id-btn" type="submit">__MSG_save_button__</button>
+            </form>
+            <a href="__MSG_slack_user_id_link__" target="_blank">__MSG_slack_user_id_description__</a>
+          </div>
         </div>
       </div>
     </main>

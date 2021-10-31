@@ -387,5 +387,17 @@ form button:hover {
 /* below is written directly */
 
 .invisible {
-  display: none;
+  /*
+    "opacity" and "visibility" are both needed
+
+    opacity:
+      All elements are invisible, but each element is changeable
+
+    visibility:
+      All elements are invisible and unchangeable, but some elements,
+      such as the switch buttons and the save buttons,
+      are slow to disappear
+  */
+  opacity: 0;
+  visibility: hidden;
 }

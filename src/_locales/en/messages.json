@@ -11,6 +11,10 @@
     "message": "Transmit Google Meet’s chats to Slack channel automatically, like a cuckoo clock"
   },
 
+  "extension_power": {
+    "message": "Power"
+  },
+
   "slack_bot_token": {
     "message": "Slack bot token"
   },

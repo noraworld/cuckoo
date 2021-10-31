@@ -1,10 +1,13 @@
 function restore() {
   chrome.storage.sync.get({
+    extensionPower: false,
     slackChannel: null,
     slackBotToken: null,
     slackMention: false,
     slackUserId: null
   }, (storage) => {
+    document.querySelector('#extension-power input').checked = storage.extensionPower
+    if (!document.querySelector('#extension-power input').checked) toggleVisibility('#all-options')
     document.querySelector('#slack-channel input').value = storage.slackChannel
     document.querySelector('#slack-bot-token input').value = storage.slackBotToken
     document.querySelector('#slack-mention input').checked = storage.slackMention
@@ -14,12 +17,14 @@ function restore() {
 }
 
 function save() {
+  let extensionPower = document.querySelector('#extension-power input').checked
   let slackChannel = document.querySelector('#slack-channel input').value
   let slackBotToken = document.querySelector('#slack-bot-token input').value
   let slackMention = document.querySelector('#slack-mention input').checked
   let slackUserId = document.querySelector('#slack-user-id input').value
 
   chrome.storage.sync.set({
+    extensionPower: extensionPower,
     slackChannel: slackChannel,
     slackBotToken: slackBotToken,
     slackMention: slackMention,
@@ -32,6 +37,11 @@ function toggleVisibility(selector) {
 }
 
 function eventListener() {
+  document.querySelector('#extension-power input').addEventListener('change', function(event) {
+    toggleVisibility('#all-options')
+    save()
+  })
+
   document.querySelector('#slack-channel').addEventListener('submit', function(event) {
     event.preventDefault()
     save()
