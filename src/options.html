@@ -35,8 +35,8 @@
     </header>
     <main>
       <div class="channel-section container">
-        <div class="auto-section container">
-          <p>__MSG_extension_power__</p>
+        <div style="padding-bottom: 35px;" class="auto-section container">
+          <h2 style="margin-bottom: 10px;">__MSG_extension_power__</h2>
           <div id="extension-power" class="toggle_switch">
             <input type="checkbox" name="extension-power-input" id="extension-power-input" />
             <label for="extension-power-input"></label>
@@ -44,37 +44,45 @@
         </div>
 
         <div id="all-options">
-          <p>__MSG_slack_bot_token__</p>
-          <form id="slack-bot-token" class="container" action="">
-            <input type="password" placeholder="xoxb-0000000000-0000000000000-xxxxxxxxxxxxxxxxxxxxxxxx" class="token-input" />
-            <button class="token-btn" type="submit">__MSG_save_button__</button>
-          </form>
-          <span><a href="__MSG_slack_bot_token_link__" target="_blank">__MSG_slack_bot_token_description__</a></span>
-          <span>__MSG_slack_bot_token_scopes_description__</span>
-          <span>__MSG_slack_bot_to_channel_description__</span>
-          <p>__MSG_slack_channel__</p>
-          <form id="slack-channel" class="container" action="">
-            <input type="text" placeholder="general" class="channel-input" />
-            <button class="channel-btn" type="submit">__MSG_save_button__</button>
-          </form>
-          <span>__MSG_slack_channel_description__</span>
-          <div class="auto-section container">
-            <p>__MSG_slack_mention__</p>
+          <div style="padding-bottom: 35px;">
+            <h2 style="margin-bottom: 10px;">__MSG_slack_bot_token__</h2>
+            <form id="slack-bot-token" class="container" action="">
+              <input type="password" placeholder="xoxb-0000000000-0000000000000-xxxxxxxxxxxxxxxxxxxxxxxx" class="token-input" />
+              <button class="token-btn" type="submit">__MSG_save_button__</button>
+            </form>
+            <span style="display: inline-block;"><a href="__MSG_slack_bot_token_link__" target="_blank">__MSG_slack_bot_token_description__</a></span>
+            <span style="display: inline-block;">__MSG_slack_bot_token_scopes_description__</span>
+            <span style="display: inline-block;">__MSG_slack_bot_to_channel_description__</span>
+          </div>
+
+          <div style="padding-bottom: 35px;">
+            <h2 style="margin-bottom: 10px;">__MSG_slack_channel__</h2>
+            <form id="slack-channel" class="container" action="">
+              <input type="text" placeholder="general" class="channel-input" />
+              <button class="channel-btn" type="submit">__MSG_save_button__</button>
+            </form>
+            <span style="display: inline-block;">__MSG_slack_channel_description__</span>
+          </div>
+
+          <div style="padding-bottom: 35px;" class="auto-section container">
+            <h2 style="margin-bottom: 10px;">__MSG_slack_mention__</h2>
             <div id="slack-mention" class="toggle_switch">
               <input type="checkbox" name="slack-mention-input" id="slack-mention-input" />
               <label for="slack-mention-input"></label>
             </div>
           </div>
-          <div id="slack-user-id" class="invisible">
-            <p>__MSG_slack_user_id__</p>
+
+          <div style="padding-bottom: 35px;" id="slack-user-id" class="invisible">
+            <h2 style="margin-bottom: 10px;">__MSG_slack_user_id__</h2>
             <form class="container" action="">
               <input type="text" placeholder="@ULSWP58N6S or @noraworld" class="user-id-input" />
               <button class="user-id-btn" type="submit">__MSG_save_button__</button>
             </form>
-            <span><a href="__MSG_slack_user_id_link__" target="_blank">__MSG_slack_user_id_description__</a></span>
+            <span style="display: inline-block;"><a href="__MSG_slack_user_id_link__" target="_blank">__MSG_slack_user_id_description__</a></span>
           </div>
-          <div class="auto-section container">
-            <p>__MSG_google_meet_url_included__</p>
+
+          <div style="padding-bottom: 35px;" class="auto-section container">
+            <h2 style="margin-bottom: 10px;">__MSG_google_meet_url_included__</h2>
             <div id="google-meet-url-included" class="toggle_switch">
               <input type="checkbox" name="google-meet-url-included-input" id="google-meet-url-included-input" />
               <label for="google-meet-url-included-input"></label>
