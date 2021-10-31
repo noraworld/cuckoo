@@ -13,6 +13,10 @@ function restore() {
     document.querySelector('#slack-mention input').checked = storage.slackMention
     if (document.querySelector('#slack-mention input').checked) toggleVisibility('#slack-user-id')
     document.querySelector('#slack-user-id input').value = storage.slackUserId
+
+    chrome.browserAction.setBadgeText({
+      text: storage.extensionPower ? 'ON' : 'OFF'
+    })
   })
 }
 
@@ -29,6 +33,10 @@ function save() {
     slackBotToken: slackBotToken,
     slackMention: slackMention,
     slackUserId: slackUserId
+  }, () => {
+    chrome.browserAction.setBadgeText({
+      text: extensionPower ? 'ON' : 'OFF'
+    })
   })
 }
 
