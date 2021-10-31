@@ -21,7 +21,7 @@ This is the best way to log conversations because chat messages on Google Meet a
 * Cuckoo - Chrome Web Store
 * Cuckoo - Firefox Add-ons
 
-I am now preparing to release it. Stay tuned!
+This extension is currently in review on the web store. I would be grateful if you would bear with me for a moment! 🙏
 
 ## Setup
 1. Head over to the options page of this extension
