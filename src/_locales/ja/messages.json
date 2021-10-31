@@ -11,12 +11,56 @@
     "message": "Google Meet のチャットメッセージを Slack チャンネルに自動的に共有します"
   },
 
+  "extension_power": {
+    "message": "拡張機能を有効にする"
+  },
+
+  "slack_bot_token": {
+    "message": "Slack ボットトークン"
+  },
+
+  "slack_bot_token_link": {
+    "message": "https://slack.com/intl/ja-jp/help/articles/115005265703-%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E3%81%A7%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E3%83%9C%E3%83%83%E3%83%88%E3%81%AE%E4%BD%9C%E6%88%90"
+  },
+
+  "slack_bot_token_description": {
+    "message": "Slack ボットの作成方法とトークンの生成方法について"
+  },
+
+  "slack_bot_token_scopes_description": {
+    "message": "ボットトークンには \"chat:write\" の権限が必要です"
+  },
+
+  "slack_bot_to_channel_description": {
+    "message": "投稿先のチャンネルにボットが追加されていることを確認してください"
+  },
+
   "slack_channel": {
     "message": "Slack チャンネル"
   },
 
-  "slack_bot_token": {
-    "message": "Slack bot トークン"
+  "slack_channel_description": {
+    "message": "先頭の \"#\" は不要です"
+  },
+
+  "slack_mention": {
+    "message": "通知を受け取る"
+  },
+
+  "slack_user_id": {
+    "message": "Slack ユーザ ID"
+  },
+
+  "slack_user_id_link": {
+    "message": "https://auto-worker.com/blog/?p=27"
+  },
+
+  "slack_user_id_description": {
+    "message": "メンバー ID の調べ方について"
+  },
+
+  "google_meet_url_included": {
+    "message": "投稿に Google Meet の URL を含める"
   },
 
   "save_button": {
