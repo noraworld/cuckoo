@@ -1,5 +1,6 @@
 'use strict'
 
+const RETRY_INTERVAL = 3000
 const CLASS_OBJ = {
   thread: 'z38b6',
   messages: 'KHxj8b tL9Q4c'

@@ -119,21 +119,41 @@
 
   function prepare() {
     getOptions()
+    setChatButtonElement()
+  }
 
-    let chatElement = document.querySelectorAll('.z38b6')[0]
-    let chatElementTimeoutID
+  function setChatButtonElement(chatButtonElementTimeoutID) {
+    let chatButtonElement = document.querySelectorAll('.VfPpkd-Bz112c-LgbsSe.yHy1rc.eT1oJ.JsuyRc.boDUxc')[2]
 
-    if (chatElement === undefined) {
-      chatElementTimeoutID = setTimeout(function() {
-        prepare()
-      }, 1000)
+    if (chatButtonElement === undefined) {
+      let chatButtonElementTimeoutID = setTimeout(function() {
+        return setChatButtonElement(chatButtonElementTimeoutID)
+      }, RETRY_INTERVAL)
     }
     else {
+      // performed only once
+      if (chatButtonElementTimeoutID) {
+        clearTimeout(chatButtonElementTimeoutID)
+        chatButtonElement.click()
+        setChatElement()
+      }
+    }
+  }
+
+  function setChatElement(chatElementTimeoutID) {
+    let chatElement = document.querySelectorAll('.z38b6')[0]
+
+    if (chatElement === undefined) {
+      let chatElementTimeoutID = setTimeout(function() {
+        return setChatElement(chatElementTimeoutID)
+      }, RETRY_INTERVAL)
+    }
+    else {
+      // performed only once
       if (chatElementTimeoutID) {
         clearTimeout(chatElementTimeoutID)
+        observer.observe(chatElement, OBSERVE_CONFIG)
       }
-
-      observer.observe(chatElement, OBSERVE_CONFIG)
     }
   }
 
