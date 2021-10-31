@@ -31,6 +31,10 @@
     "message": "\"chat:write\" is required for this bot token"
   },
 
+  "slack_bot_to_channel_description": {
+    "message": "Make sure this bot is added to a channel to which you want to post"
+  },
+
   "slack_channel": {
     "message": "Slack channel"
   },
