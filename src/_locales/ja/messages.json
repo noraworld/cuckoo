@@ -65,5 +65,13 @@
 
   "save_button": {
     "message": "保存"
+  },
+
+  "slack_first_message_text": {
+    "message": "Google Meet チャットログ"
+  },
+
+  "date_and_time": {
+    "message": "時刻"
   }
 }

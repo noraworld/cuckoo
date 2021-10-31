@@ -65,5 +65,13 @@
 
   "save_button": {
     "message": "Save"
+  },
+
+  "slack_first_message_text": {
+    "message": "Chat log from Google Meet"
+  },
+
+  "date_and_time": {
+    "message": "Date and Time"
   }
 }

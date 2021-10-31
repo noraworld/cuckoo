@@ -96,10 +96,10 @@ function buildFirstSlackMessage(message) {
   message.payload['text'] = null
 
   if (message.mention && message.userId) {
-    text = '<' + message.userId + '> Chat log from Google Meet'
+    text = `<${message.userId}> ${chrome.i18n.getMessage('slack_first_message_text')}`
   }
   else {
-    text = 'Chat log from Google Meet'
+    text = chrome.i18n.getMessage('slack_first_message_text')
   }
 
   if (isGoogleMeetURL(message.googleMeetURL) && message.googleMeetURLIncluded) {
@@ -110,7 +110,7 @@ function buildFirstSlackMessage(message) {
       },
       {
         'type': 'mrkdwn',
-        'text': '*Date and Time*:'
+        'text': `*${chrome.i18n.getMessage('date_and_time')}*:`
       },
       {
         'type': 'mrkdwn',
@@ -127,7 +127,7 @@ function buildFirstSlackMessage(message) {
     fields = [
       {
         'type': 'mrkdwn',
-        'text': '*Date and Time*:'
+        'text': `*${chrome.i18n.getMessage('date_and_time')}*:`
       },
       {
         'type': 'plain_text',
