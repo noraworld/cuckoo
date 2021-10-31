@@ -1,10 +1,10 @@
 {
   "extension_name": {
-    "message": "Cuckoo"
+    "message": "Cuckoo - Log Google Meet Chat Messages to Slack"
   },
 
   "extension_short_name": {
-    "message": "cuckoo"
+    "message": "Cuckoo"
   },
 
   "extension_description": {
