@@ -7,6 +7,12 @@
   "homepage_url": "https://github.com/noraworld/cuckoo",
   "default_locale": "en",
 
+  "icons": {
+    "16":  "img/logo16x16.png",
+    "48":  "img/logo48x48.png",
+    "128": "img/logo128x128.png"
+  },
+
   "permissions": [
     "tabs",
     "storage",
