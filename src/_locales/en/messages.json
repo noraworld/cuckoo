@@ -8,7 +8,7 @@
   },
 
   "extension_description": {
-    "message": "Transmit Google Meet’s chats to Slack channel automatically, like a cuckoo clock"
+    "message": "Transmit chat messages on Google Meet to a Slack channel automatically"
   },
 
   "extension_power": {
