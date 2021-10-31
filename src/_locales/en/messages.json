@@ -32,7 +32,7 @@
   },
 
   "slack_bot_to_channel_description": {
-    "message": "Make sure this bot is added to a channel to which you want to post"
+    "message": "Please add this bot to a channel to which you want to post"
   },
 
   "slack_channel": {

@@ -32,7 +32,7 @@
   },
 
   "slack_bot_to_channel_description": {
-    "message": "投稿先のチャンネルにボットが追加されていることを確認してください"
+    "message": "投稿先のチャンネルにこのボットを追加してください"
   },
 
   "slack_channel": {
