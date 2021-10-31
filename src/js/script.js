@@ -153,8 +153,16 @@
       if (chatElementTimeoutID) {
         clearTimeout(chatElementTimeoutID)
         observer.observe(chatElement, OBSERVE_CONFIG)
+        ready()
       }
     }
+  }
+
+  function ready() {
+    let chatBoxHeadStyle = document.querySelector('.CYZUZd').style
+
+    chatBoxHeadStyle.backgroundColor = '#314685';
+    chatBoxHeadStyle.color = '#dfdfdf';
   }
 
   prepare()
