@@ -9,7 +9,7 @@ This is the best way to log conversations because chat messages on Google Meet a
 * English
 * [日本語](/README/ja.md)
 
-## features
+## Features
 * You can select a Slack channel to which you want to post
 * You can get notified from Slack when a new chat message is sent
     * This is useful when your active tab is not a meeting screen
@@ -31,7 +31,7 @@ This extension is currently in review on the web store. I would be grateful if y
 That is done!
 
 ## How it works
-Heading over to Google Meet, this extension starts to work automatically. All you have to do is open a chat box on Google Meet, send a message or wait someone sending it, and see if it is posted to Slack.
+Heading over to Google Meet, this extension starts to work automatically. All you have to do is open a chat box on Google Meet, send a message or wait for someone sending it, and see if it is posted to Slack.
 
 ## Change log
-See [CHANGELOG.md](/CHANGELOG/en.md).
+See [CHANGELOG](/CHANGELOG/en.md).

@@ -34,4 +34,4 @@ Google Meet のチャットメッセージは、通話が終了すると削除�
 Google Meet のページにアクセスすると、自動的に動作します。あとは、チャットボックスを開いてメッセージを送るか誰かが送るのを待ち、そのメッセージが Slack に共有されていることを確認するだけです。
 
 ## 変更履歴
-[CHANGELOG.md](/CHANGELOG/en.md) をご覧ください。
+[CHANGELOG](/CHANGELOG/en.md) をご覧ください。
