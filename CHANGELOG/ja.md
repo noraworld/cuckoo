@@ -1,7 +1,7 @@
 # 変更履歴
 このプロジェクトのすべての変更はこのファイルに文書化されます。
 
-形式は [Keep a Changelog](http://keepachangelog.com) に基づいており、このプロジェクトは [セマンティックバージョニング](http://semver.org) に準拠しています。
+形式は [Keep a Changelog](https://keepachangelog.com/ja/1.0.0/) に基づいており、このプロジェクトは [セマンティックバージョニング](https://semver.org/lang/ja/) に準拠しています。
 
 ## [0.1.0] - 2021-10-31
 ### 追加
