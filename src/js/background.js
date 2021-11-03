@@ -84,7 +84,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 chrome.runtime.onInstalled.addListener((object) => {
   if (object.reason === chrome.runtime.OnInstalledReason.INSTALL) {
     chrome.tabs.create({
-      url: chrome.extension.getURL('options.html')
+      url: chrome.runtime.getURL('options.html')
     });
   }
 });
@@ -95,11 +95,24 @@ function buildFirstSlackMessage(message) {
 
   message.payload['text'] = null
 
+  // NOTE:
+  //   Due to a bug on Chromium, chrome.i18n.getMessage() cannot be
+  //   used in Manifest V3, it can be used in Manifest V2 though
+  //
+  //   This bug would be fixed in the future, but
+  //   chrome.i18n.getMessage() turns to be disabled until this bug
+  //   exists
+  //
+  //   cf. https://groups.google.com/a/chromium.org/g/chromium-extensions/c/dG6JeZGkN5w
+  //       https://cofus.blog/posts/when-chromei18ngetmessage-cannot-be-obtained-with-service-worker (ja)
+
   if (message.mention && message.userId) {
-    text = `<${message.userId}> ${chrome.i18n.getMessage('slack_first_message_text')}`
+    // text = `<${message.userId}> ${chrome.i18n.getMessage('slack_first_message_text')}`
+    text = `<${message.userId}> Chat log from Google Meet`
   }
   else {
-    text = chrome.i18n.getMessage('slack_first_message_text')
+    // text = chrome.i18n.getMessage('slack_first_message_text')
+    text = 'Chat log from Google Meet'
   }
 
   if (isGoogleMeetURL(message.googleMeetURL) && message.googleMeetURLIncluded) {
@@ -110,7 +123,8 @@ function buildFirstSlackMessage(message) {
       },
       {
         'type': 'mrkdwn',
-        'text': `*${chrome.i18n.getMessage('date_and_time')}*:`
+        // 'text': `*${chrome.i18n.getMessage('date_and_time')}*:`
+        'text': `*Date and Time*:`
       },
       {
         'type': 'mrkdwn',
@@ -127,7 +141,8 @@ function buildFirstSlackMessage(message) {
     fields = [
       {
         'type': 'mrkdwn',
-        'text': `*${chrome.i18n.getMessage('date_and_time')}*:`
+        // 'text': `*${chrome.i18n.getMessage('date_and_time')}*:`
+        'text': `*Date and Time*:`
       },
       {
         'type': 'plain_text',

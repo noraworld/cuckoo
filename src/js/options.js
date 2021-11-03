@@ -16,7 +16,7 @@ function restore() {
     document.querySelector('#slack-user-id input').value = storage.slackUserId
     document.querySelector('#google-meet-url-included input').checked = storage.googleMeetURLIncluded
 
-    chrome.browserAction.setBadgeText({
+    chrome.action.setBadgeText({
       text: storage.extensionPower ? 'ON' : 'OFF'
     })
   })
@@ -38,7 +38,7 @@ function save() {
     slackUserId: slackUserId,
     googleMeetURLIncluded: googleMeetURLIncluded
   }, () => {
-    chrome.browserAction.setBadgeText({
+    chrome.action.setBadgeText({
       text: extensionPower ? 'ON' : 'OFF'
     })
   })
