@@ -35,3 +35,12 @@ Heading over to Google Meet, this extension starts to work automatically. All yo
 
 ## Change log
 See [CHANGELOG](/CHANGELOG/en.md).
+
+## Privacy policy
+In order to clarify how we handle your user data through this product, we disclose our privacy policy in the link below.
+
+[Privacy Policy for Cuckoo](https://www.freeprivacypolicy.com/live/7e46ca5d-46df-4134-9e11-02addfba616b)
+
+We hereby declare that we do not collect, disclose, and share your user data without your consent.
+
+By installing this product from the web store, you shall be deemed to have agreed our privacy policy.
