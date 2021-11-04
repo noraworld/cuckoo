@@ -17,7 +17,7 @@ This is the best way to log conversations because chat messages on Google Meet a
     * You can also turn off this feature
 * You can apply settings instantly via a popup menu anytime, even during your meeting
 
-## Installation (TBD)
+## Installation
 * [Cuckoo - Chrome Web Store](https://chrome.google.com/webstore/detail/jgkpnadfdhhglgkimejpibhfiniemhhf)
 
 ## Setup
