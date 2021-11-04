@@ -19,7 +19,6 @@ Google Meet のチャットメッセージは、通話が終了すると削除�
 
 ## インストール
 * [Cuckoo - Chrome ウェブストア](https://chrome.google.com/webstore/detail/jgkpnadfdhhglgkimejpibhfiniemhhf)
-* Cuckoo - Firefox アドオン
 
 ## セットアップ
 1. 拡張機能の設定ページにアクセスします
