@@ -82,19 +82,39 @@
       //     You
       //     Hello from Google Meet
       //   the second one is:
-      //     You12:34 PM
+      //     You
+      //     12:34 PM
       //     Hello from Google Meet
       //   the first one has not sent to Google Meet yet
       //   so ignore it to avoid sending duplicated messages to Slack
       //
       // MEMO:
       //   https://stackoverflow.com/questions/21711768/split-string-in-javascript-and-detect-line-break#answer-21712066
-      if ((message.match(/\n/g)||[]).length !== 0 && (message.split(/\n/g)[0].match(/\d+:\d+/g)||[]).length === 0) return
+      if (isDuplicatedMessage(message)) return
 
       prevMessage = message
       post(message)
     })
   })
+
+  function isDuplicatedMessage(message) {
+    // false if there is no newlines
+    if ((message.match(/\n/g)||[]).length === 0) {
+      return false
+    }
+
+    let splittedMessage = message.split(/\n/g)
+
+    // false if at least one line has a time string (e.g. "12:34 PM")
+    for (let i = 0; i < splittedMessage.length; i++) {
+      if ((splittedMessage[i].match(/\d+:\d+/g)||[]).length !== 0) {
+        return false
+      }
+    }
+
+    // true if all of the lines do not have time strings
+    return true
+  }
 
   function post(message) {
     if (extensionPower === false) return
