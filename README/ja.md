@@ -18,7 +18,7 @@ Google Meet のチャットメッセージは、通話が終了すると削除�
 * ミーティング中でも、拡張機能のポップアップメニューから設定を変更し、すぐに適用させることができます
 
 ## インストール
-* [Cuckoo - Chrome ウェブストア](https://chrome.google.com/webstore/detail/jgkpnadfdhhglgkimejpibhfiniemhhf) (v0.2.0)
+* [Cuckoo - Chrome ウェブストア](https://chrome.google.com/webstore/detail/jgkpnadfdhhglgkimejpibhfiniemhhf?hl=ja) (v0.2.0)
 
 ## セットアップ
 1. 拡張機能の設定ページにアクセスします
