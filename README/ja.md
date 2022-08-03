@@ -1,13 +1,13 @@
 # Cuckoo
+
+| [English](/README/en.md) | **日本語** |
+| ------------------------ | --------- |
+
 ![Google Meet to Slack](/img/google_meet_to_slack.png)
 
 Cuckoo は Google Meet のチャットメッセージを Slack チャンネルに自動的に共有するブラウザ拡張機能です。
 
 Google Meet のチャットメッセージは、通話が終了すると削除されるため、チャットメッセージを記録しておくのに便利です。
-
-## 対応言語
-* [English](/README/en.md)
-* 日本語
 
 ## 特徴
 * 共有したい Slack チャンネルを自由に選択できます
