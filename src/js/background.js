@@ -74,7 +74,8 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
       active: true,
       lastFocusedWindow: true
     }, (tabs) => {
-      sendResponse(tabs[0].url);
+      // https://bobbyhadz.com/blog/javascript-remove-querystring-from-url
+      sendResponse(tabs[0].url.split('?')[0])
     });
 
     return true;
