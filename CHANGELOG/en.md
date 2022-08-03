@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 
 
 
-## Unreleased
+## [0.2.0] - 2022-08-03
 ### Added
 * Add the option to include a title
 * Add the option to remind you to change settings before you take part in
@@ -46,4 +46,5 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 
 
 
+[0.2.0]: https://github.com/noraworld/cuckoo/releases/tag/v0.2.0
 [0.1.0]: https://github.com/noraworld/cuckoo/releases/tag/v0.1.0

@@ -5,7 +5,7 @@
 
 
 
-## 未リリース
+## [0.2.0] - 2022-08-03
 ### 追加
 * タイトルを含めるオプションを追加
 * 参加前に設定の変更をリマインドするオプションを追加
@@ -46,4 +46,5 @@
 
 
 
+[0.2.0]: https://github.com/noraworld/cuckoo/releases/tag/v0.2.0
 [0.1.0]: https://github.com/noraworld/cuckoo/releases/tag/v0.1.0
