@@ -67,6 +67,14 @@
     "message": "Include Google Meet Title"
   },
 
+  "reminder": {
+    "message": "Remind me to change settings before I take part in"
+  },
+
+  "reminder_text": {
+    "message": "Don’t forget to change Cuckoo settings before you take part in!"
+  },
+
   "save_button": {
     "message": "Save"
   },

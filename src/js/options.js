@@ -6,7 +6,8 @@ function restore() {
     slackMention: false,
     slackUserId: null,
     googleMeetURLIncluded: false,
-    googleMeetTitleIncluded: false
+    googleMeetTitleIncluded: false,
+    reminder: false,
   }, (storage) => {
     document.querySelector('#extension-power input').checked = storage.extensionPower
     if (!document.querySelector('#extension-power input').checked) toggleVisibility('#all-options')
@@ -17,6 +18,7 @@ function restore() {
     document.querySelector('#slack-user-id input').value = storage.slackUserId
     document.querySelector('#google-meet-url-included input').checked = storage.googleMeetURLIncluded
     document.querySelector('#google-meet-title-included input').checked = storage.googleMeetTitleIncluded
+    document.querySelector('#reminder input').checked = storage.reminder
 
     chrome.action.setBadgeText({
       text: storage.extensionPower ? 'ON' : 'OFF'
@@ -32,6 +34,7 @@ function save() {
   let slackUserId = document.querySelector('#slack-user-id input').value
   let googleMeetURLIncluded = document.querySelector('#google-meet-url-included input').checked
   let googleMeetTitleIncluded = document.querySelector('#google-meet-title-included input').checked
+  let reminder = document.querySelector('#reminder input').checked
 
   chrome.storage.sync.set({
     extensionPower: extensionPower,
@@ -40,7 +43,8 @@ function save() {
     slackMention: slackMention,
     slackUserId: slackUserId,
     googleMeetURLIncluded: googleMeetURLIncluded,
-    googleMeetTitleIncluded: googleMeetTitleIncluded
+    googleMeetTitleIncluded: googleMeetTitleIncluded,
+    reminder: reminder,
   }, () => {
     chrome.action.setBadgeText({
       text: extensionPower ? 'ON' : 'OFF'
@@ -83,6 +87,10 @@ function eventListener() {
   })
 
   document.querySelector('#google-meet-title-included input').addEventListener('change', function(event) {
+    save()
+  })
+
+  document.querySelector('#reminder input').addEventListener('change', function(event) {
     save()
   })
 }

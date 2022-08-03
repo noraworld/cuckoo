@@ -67,6 +67,14 @@
     "message": "投稿に Google Meet のタイトルを含める"
   },
 
+  "reminder": {
+    "message": "参加前に設定の変更をリマインドする"
+  },
+
+  "reminder_text": {
+    "message": "参加する前に Cuckoo の設定が正しいか確認してください!"
+  },
+
   "save_button": {
     "message": "保存"
   },

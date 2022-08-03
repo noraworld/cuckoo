@@ -11,6 +11,7 @@
   let slackUserId
   let googleMeetURLIncluded
   let googleMeetTitleIncluded
+  let reminder
 
   function getOptions() {
     chrome.storage.sync.get({
@@ -20,7 +21,8 @@
       slackMention: false,
       slackUserId: null,
       googleMeetURLIncluded: false,
-      googleMeetTitleIncluded: false
+      googleMeetTitleIncluded: false,
+      reminder: false,
     }, (storage) => {
       extensionPower = storage.extensionPower
       slackChannel = storage.slackChannel
@@ -29,6 +31,7 @@
       slackUserId = storage.slackUserId
       googleMeetURLIncluded = storage.googleMeetURLIncluded
       googleMeetTitleIncluded = storage.googleMeetTitleIncluded
+      reminder = storage.reminder
     })
   }
 
@@ -156,6 +159,21 @@
   function prepare() {
     getOptions()
     setChatButtonElement()
+    remind()
+  }
+
+  function remind(reminderTimeoutID) {
+    if (reminder === undefined) {
+      let reminderTimeoutID = setTimeout(function() {
+        return remind(reminderTimeoutID)
+      }, RETRY_INTERVAL)
+    }
+    else {
+      if (reminderTimeoutID) {
+        clearTimeout(reminderTimeoutID)
+        if (reminder) alert(chrome.i18n.getMessage('reminder_text'))
+      }
+    }
   }
 
   function setChatButtonElement(chatButtonElementTimeoutID) {
