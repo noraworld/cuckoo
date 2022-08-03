@@ -30,6 +30,9 @@ That is done!
 ## How it works
 Heading over to Google Meet, this extension starts to work automatically. All you have to do is open a chat box on Google Meet, send a message or wait for someone sending it, and see if it is posted to Slack.
 
+## Known issues
+* It does not work properly if you stay on the page before you take part in the meeting for a long time
+
 ## Change log
 See [CHANGELOG](/CHANGELOG/en.md).
 
