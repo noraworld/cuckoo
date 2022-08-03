@@ -147,7 +147,7 @@
         userId: slackUserId,
         googleMeetURL: googleMeetURL,
         googleMeetURLIncluded: googleMeetURLIncluded,
-        googleMeetTitle: document.querySelector('.u6vdEc.ouH3xe').textContent,
+        googleMeetTitle: document.querySelector(ELEMENTS['title']).textContent,
         googleMeetTitleIncluded: googleMeetTitleIncluded
       },
       function(response) {
@@ -177,7 +177,7 @@
   }
 
   function setChatButtonElement(chatButtonElementTimeoutID) {
-    let chatButtonElement = document.querySelectorAll('.VfPpkd-Bz112c-LgbsSe.yHy1rc.eT1oJ.JsuyRc.boDUxc')[2]
+    let chatButtonElement = document.querySelectorAll(ELEMENTS['chatButton']['element'])[ELEMENTS['chatButton']['index']]
 
     if (chatButtonElement === undefined) {
       let chatButtonElementTimeoutID = setTimeout(function() {
@@ -195,7 +195,9 @@
   }
 
   function setChatElement(chatElementTimeoutID) {
-    let chatElement = document.querySelectorAll('.z38b6')[0]
+    // The below doesn't work, but I'm not sure why
+    //   document.querySelector(ELEMENTS['chat']['element'])
+    let chatElement = document.querySelectorAll(ELEMENTS['chat']['element'])[ELEMENTS['chat']['index']]
 
     if (chatElement === undefined) {
       let chatElementTimeoutID = setTimeout(function() {
@@ -225,10 +227,10 @@
   }
 
   function ready() {
-    let chatBoxHeadStyle = document.querySelector('.CYZUZd').style
+    let chatBoxHeadStyle = document.querySelector(ELEMENTS['chatBoxHead']).style
 
-    chatBoxHeadStyle.backgroundColor = '#314685';
-    chatBoxHeadStyle.color = '#dfdfdf';
+    chatBoxHeadStyle.color = STYLE['chatBoxHeadColor'];
+    chatBoxHeadStyle.backgroundColor = STYLE['chatBoxHeadBackgroundColor'];
   }
 
   prepare()
