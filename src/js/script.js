@@ -10,6 +10,7 @@
   let slackMention
   let slackUserId
   let googleMeetURLIncluded
+  let googleMeetTitleIncluded
 
   function getOptions() {
     chrome.storage.sync.get({
@@ -18,7 +19,8 @@
       slackBotToken: null,
       slackMention: false,
       slackUserId: null,
-      googleMeetURLIncluded: false
+      googleMeetURLIncluded: false,
+      googleMeetTitleIncluded: false
     }, (storage) => {
       extensionPower = storage.extensionPower
       slackChannel = storage.slackChannel
@@ -26,6 +28,7 @@
       slackMention = storage.slackMention
       slackUserId = storage.slackUserId
       googleMeetURLIncluded = storage.googleMeetURLIncluded
+      googleMeetTitleIncluded = storage.googleMeetTitleIncluded
     })
   }
 
@@ -140,7 +143,9 @@
         mention: slackMention,
         userId: slackUserId,
         googleMeetURL: googleMeetURL,
-        googleMeetURLIncluded: googleMeetURLIncluded
+        googleMeetURLIncluded: googleMeetURLIncluded,
+        googleMeetTitle: document.querySelector('.u6vdEc.ouH3xe').textContent,
+        googleMeetTitleIncluded: googleMeetTitleIncluded
       },
       function(response) {
         threadId ||= response.ts

@@ -5,7 +5,8 @@ function restore() {
     slackBotToken: null,
     slackMention: false,
     slackUserId: null,
-    googleMeetURLIncluded: false
+    googleMeetURLIncluded: false,
+    googleMeetTitleIncluded: false
   }, (storage) => {
     document.querySelector('#extension-power input').checked = storage.extensionPower
     if (!document.querySelector('#extension-power input').checked) toggleVisibility('#all-options')
@@ -15,6 +16,7 @@ function restore() {
     if (document.querySelector('#slack-mention input').checked) toggleVisibility('#slack-user-id')
     document.querySelector('#slack-user-id input').value = storage.slackUserId
     document.querySelector('#google-meet-url-included input').checked = storage.googleMeetURLIncluded
+    document.querySelector('#google-meet-title-included input').checked = storage.googleMeetTitleIncluded
 
     chrome.action.setBadgeText({
       text: storage.extensionPower ? 'ON' : 'OFF'
@@ -29,6 +31,7 @@ function save() {
   let slackMention = document.querySelector('#slack-mention input').checked
   let slackUserId = document.querySelector('#slack-user-id input').value
   let googleMeetURLIncluded = document.querySelector('#google-meet-url-included input').checked
+  let googleMeetTitleIncluded = document.querySelector('#google-meet-title-included input').checked
 
   chrome.storage.sync.set({
     extensionPower: extensionPower,
@@ -36,7 +39,8 @@ function save() {
     slackBotToken: slackBotToken,
     slackMention: slackMention,
     slackUserId: slackUserId,
-    googleMeetURLIncluded: googleMeetURLIncluded
+    googleMeetURLIncluded: googleMeetURLIncluded,
+    googleMeetTitleIncluded: googleMeetTitleIncluded
   }, () => {
     chrome.action.setBadgeText({
       text: extensionPower ? 'ON' : 'OFF'
@@ -75,6 +79,10 @@ function eventListener() {
   })
 
   document.querySelector('#google-meet-url-included input').addEventListener('change', function(event) {
+    save()
+  })
+
+  document.querySelector('#google-meet-title-included input').addEventListener('change', function(event) {
     save()
   })
 }

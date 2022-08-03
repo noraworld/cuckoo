@@ -91,7 +91,7 @@ chrome.runtime.onInstalled.addListener((object) => {
 });
 
 function buildFirstSlackMessage(message) {
-  let text
+  let text = ''
   let fields
 
   message.payload['text'] = null
@@ -108,12 +108,14 @@ function buildFirstSlackMessage(message) {
   //       https://cofus.blog/posts/when-chromei18ngetmessage-cannot-be-obtained-with-service-worker (ja)
 
   if (message.mention && message.userId) {
-    // text = `<${message.userId}> ${chrome.i18n.getMessage('slack_first_message_text')}`
-    text = `<${message.userId}> Chat log from Google Meet`
+    text += `<${message.userId}>`
   }
-  else {
-    // text = chrome.i18n.getMessage('slack_first_message_text')
-    text = 'Chat log from Google Meet'
+
+  // text += chrome.i18n.getMessage('slack_first_message_text')
+  text += 'Chat log from Google Meet'
+
+  if (message.googleMeetTitleIncluded) {
+    text += ` (${message.googleMeetTitle})`
   }
 
   if (isGoogleMeetURL(message.googleMeetURL) && message.googleMeetURLIncluded) {

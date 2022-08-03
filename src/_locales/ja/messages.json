@@ -63,6 +63,10 @@
     "message": "投稿に Google Meet の URL を含める"
   },
 
+  "google_meet_title_included": {
+    "message": "投稿に Google Meet のタイトルを含める"
+  },
+
   "save_button": {
     "message": "保存"
   },
