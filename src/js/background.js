@@ -174,13 +174,10 @@ function buildFirstSlackMessage(message) {
   return message
 }
 
+// https://bobbyhadz.com/blog/javascript-format-date-yyyymmdd
+// https://zenn.dev/terrierscript/articles/2020-09-19-time-sv-se
 function getCurrentTime() {
-  let today    = new Date()
-  let date     = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
-  let time     = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds()
-  let datetime = date + ' ' + time
-
-  return datetime
+  return new Date().toLocaleString('sv-SE')
 }
 
 function isGoogleMeetURL(url) {
