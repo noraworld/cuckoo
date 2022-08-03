@@ -41,7 +41,7 @@
         "https://meet.google.com/*"
       ],
       "js": [
-        "js/const.js",
+        "js/constant.js",
         "js/script.js"
       ],
       "all_frames": true
