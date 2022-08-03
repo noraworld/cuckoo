@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com) and this project adheres to [Semantic Versioning](http://semver.org).
 
+
+
+## Unreleased
+### Added
+* Add the option to include a title
+* Add the option to remind you to change settings before you take part in
+
+### Changed
+* Align the date and time to two digits
+* Delete a query parameter from the URL
+
+### Fixed
+* Fix that it does not work
+
+
+
 ## [0.1.0] - 2021-10-31
 ### Added
 * Add an options page
@@ -27,5 +43,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com) and this pr
 ### Fixed
 * Fix a bug to get notified even though this feature is off on an options page
 * Fix a bug that a part of displaying time is parsed as an emoji
+
+
 
 [0.1.0]: https://github.com/noraworld/cuckoo/releases/tag/v0.1.0
